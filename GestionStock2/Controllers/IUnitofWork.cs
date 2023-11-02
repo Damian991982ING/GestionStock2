@@ -6,6 +6,8 @@ namespace GestionStock2.Controllers
     {
         ICategoriasRepository CategoriasRepository { get; }
 
+        IProductosRepository ProductosRepository { get; }
+
         Task CompleteAsync();
     }
 }

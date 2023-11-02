@@ -9,12 +9,15 @@ namespace GestionStock2.Services
 
         public ICategoriasRepository CategoriasRepository { get; private set; }
 
+        public IProductosRepository ProductosRepository { get; private set; }
+
         private readonly GestionStockDBContext _dbContext;
 
         public UnitofWorkRepository(GestionStockDBContext dbContext)
         {
             _dbContext = dbContext;
             CategoriasRepository=new CategoriasRepository(dbContext);
+            ProductosRepository=new ProductosRepository(dbContext);
         }
 
         public async Task CompleteAsync()
